@@ -2,7 +2,7 @@ export interface Weather {
     city: string;
     temperature: string;
     conditions: string
-    wind_speed: string;
+    windSpeed: string;
     humidity: string;
     }
     

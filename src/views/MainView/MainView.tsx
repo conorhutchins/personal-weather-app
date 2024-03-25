@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from "react";
-import CityWeatherCard from "./CityWeatherCard";
+import CityWeatherCard from "../../components/CityWeatherCard/CityWeatherCard";
 import styles from "../styles/MainView.module.css";
-import { fetchWeatherData, City } from "../utils/weatherService";
+import { fetchWeatherData, City } from "../../api/weather";
 
 const MainView: React.FC = () => {
     const [cities, setCities] = useState<City[]>([]);
@@ -9,7 +9,7 @@ const MainView: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(()=> {
-    fetchWeatherData(). then(data => {
+    fetchWeatherData().then(data => {
         setCities(data);
         setLoading(false);
     }).catch(error => {
@@ -33,7 +33,7 @@ const MainView: React.FC = () => {
               name={city.name}
               temperature={city.weather.temperature}
               conditions={city.weather.conditions}
-              wind_speed={city.weather.wind_speed}
+              windSpeed={city.weather.windSpeed}
               humidity={city.weather.humidity} 
             />
           ))}
