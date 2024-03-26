@@ -3,7 +3,7 @@ import CityWeatherCard from "../../components/CityWeatherCard/CityWeatherCard";
 import styles from "../styles/MainView.module.css";
 import { useWeatherApi } from "../../api/hooks/useWeatherApi";
 
-const MainView: React.FC = () => {
+export const MainView: React.FC = () => {
   const { cities, loading, error } = useWeatherApi();
 
     if (loading) {
@@ -30,5 +30,3 @@ const MainView: React.FC = () => {
       </div>
     );
   };
-
-    export default MainView;
