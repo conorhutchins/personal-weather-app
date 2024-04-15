@@ -7,21 +7,20 @@ export const useWeatherApi = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    (async () => {
       try {
         setLoading(true);
         const data = await fetchWeatherData();
         setCities(data);
-      } catch (error: unknown) {
-        const errorMessage =
-          error instanceof Error ? error.message : "An unknown error occurred";
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
         setError(errorMessage);
       } finally {
         setLoading(false);
       }
-    };
-    fetchData();
-  }, []);
-
+    }
+    )();
+  }
+  , []);
   return { cities, loading, error };
 };

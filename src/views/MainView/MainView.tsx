@@ -15,8 +15,6 @@ export const MainView: React.FC = () => {
     }
     return (
       <div className={styles.mainView}>
-        {loading && <div>Still loading...</div>}
-        {error && <div>{error}</div>}
         {!loading && !error && cities.map((city) => (
           <CityWeatherCard 
             key={city.name}
