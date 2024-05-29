@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from "react";
 import CityWeatherCard from "../../components/CityWeatherCard/CityWeatherCard";
-import styles from "../styles/MainView.module.css";
+import styles from './MainView.module.css';
 import { useWeatherApi } from "../../api/hooks/useWeatherApi";
 
 export const MainView: React.FC = () => {

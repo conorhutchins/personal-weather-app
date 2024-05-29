@@ -12,6 +12,9 @@ export const useWeatherApi = () => {
         setLoading(true);
         const data = await fetchWeatherData();
         setCities(data);
+        if (data.length === 0) {
+          setError("No cities found");
+        }
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
         setError(errorMessage);
