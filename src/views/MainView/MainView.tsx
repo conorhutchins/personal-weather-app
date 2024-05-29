@@ -2,9 +2,11 @@ import React, { useEffect, useState} from "react";
 import CityWeatherCard from "../../components/CityWeatherCard/CityWeatherCard";
 import styles from './MainView.module.css';
 import { useWeatherApi } from "../../api/hooks/useWeatherApi";
+import { useNavigate } from "react-router-dom";
 
 export const MainView: React.FC = () => {
   const { cities, loading, error } = useWeatherApi();
+  const navigate = useNavigate();
 
     if (loading) {
         return <div>Still loading...</div>;
@@ -15,15 +17,17 @@ export const MainView: React.FC = () => {
     }
     return (
       <div className={styles.mainView}>
-        {!loading && !error && cities.map((city) => (
+        {cities.map((city) => (
+          <div key={city.name}>
           <CityWeatherCard 
-            key={city.name}
             name={city.name}
             temperature={city.weather.temperature}
             conditions={city.weather.conditions}
             windSpeed={city.weather.windSpeed}
             humidity={city.weather.humidity} 
           />
+          <button onClick={() => navigate(`/details/${city.name}`, { state: { city }})}>Details</button>
+      </div>
         ))}
       </div>
     );
