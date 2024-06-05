@@ -1,0 +1,45 @@
+/* Set the body background color */
+body {
+    background-color: #323f58;
+    margin: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Container for the white box */
+  .container {
+    background-color: #ffffff;
+    padding-top: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+  }
+  
+  .weather {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0;
+    display: block;
+  }
+  
+  .UK {
+    margin-top: 0;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: auto;
+  }
+  
+  .time {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: rgb(118, 113, 113);
+    display: inline;
+    text-align: right;
+  }
+  

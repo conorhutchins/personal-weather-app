@@ -10,11 +10,11 @@ import './App.css'
 
 function App() {
   return (
-<Router>
-  <h1>Weather</h1>
-  <h2>United Kingdom</h2>
-  <div className="time">{new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: true })}</div>
+    <Router>
   <div className="container">
+  <h1 className="weather">Weather</h1>
+  <h1 className="UK">United Kingdom</h1>
+  <div className="time">{new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: true })}</div>
     <Routes>
       <Route path="/" element={<MainView />}/>
       <Route path="details/:cityName" element={<DetailsView />}/>
