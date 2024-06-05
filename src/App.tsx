@@ -13,6 +13,7 @@ function App() {
 <Router>
   <h1>Weather</h1>
   <h2>United Kingdom</h2>
+  <div className="time">{new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: true })}</div>
   <div className="container">
     <Routes>
       <Route path="/" element={<MainView />}/>

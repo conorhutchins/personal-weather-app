@@ -32,12 +32,11 @@ export const MainView: React.FC = () => {
     return (
       <div className={styles.mainView}>
         <h1> Weather United Kingdom </h1>
-        <div className="time">{new Date().toLocaleTimeString()}</div>
         {cities.map((city) => (
           <div key={city.name} className={styles.city}>
           <h2>{city.name}</h2>
           <img src ={weatherIcons[city.weather.conditions || notFound]} alt={city.weather.conditions} className={styles.weatherIcon}/>
-          <button onClick={() => navigate(`/details/${city.name}`, { state: { city }})}>Details</button>
+          <button onClick={() => navigate(`/details/${city.name}`, { state: { city, icon: weatherIcons[city.weather.conditions || notFound] }})}>Details</button>
       </div>
         ))}
       </div>
