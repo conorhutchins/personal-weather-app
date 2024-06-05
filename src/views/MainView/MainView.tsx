@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import sunIcon from '../../assets/images/sunny.png';
 import cloudIcon from '../../assets/images/cloudy.png';
 import rainIcon from '../../assets/images/rain.png';
-import backIcon from '../../assets/images/back.png';
 import partialCloudIcon from '../../assets/images/partially-cloudy.png';
 import notFound from '../../assets/images/not-found.png';
 
