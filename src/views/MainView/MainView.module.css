@@ -1,9 +1,28 @@
-.main-view {
-    padding: 20px;
-  }
+.city {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 10px 0;
 
-.main-view_title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
+}
+.city:last-child {
+  border-bottom: none;
+}
+.cityName {
+  font-size: 12px;
+  font-weight: 100;
+}
+.icons {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+button {
+  background: #ece8e8;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 10px;
+}

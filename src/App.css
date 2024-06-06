@@ -35,11 +35,10 @@ body {
   }
   
   .time {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
-    margin-bottom: 20px;
-    color: rgb(118, 113, 113);
-    display: inline;
+    color: #767171;
     text-align: right;
+    margin-bottom: 20px;
   }
   

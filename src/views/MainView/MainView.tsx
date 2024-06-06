@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from "react";
-import CityWeatherCard from "../../components/CityWeatherCard/CityWeatherCard";
+import { City } from '../../api/weather';
 import styles from './MainView.module.css';
 import { useWeatherApi } from "../../api/hooks/useWeatherApi";
 import { useNavigate } from "react-router-dom";
@@ -18,23 +18,29 @@ const weatherIcons: {[key: string]: string | undefined } = {
   'Not Found': notFound,
 };
 
+const sortCitiesByName = (cities: City[]) => {
+  return [...cities].sort((a, b) => a.name.localeCompare(b.name));
+}
+
 export const MainView: React.FC = () => {
   const { cities, loading, error } = useWeatherApi();
   const navigate = useNavigate();
-
     if (loading) {
-        return <div>Still loading...</div>;
+        return <h2 className={styles.loading}>Still loading...</h2>;
     }
 
     if (error) {
-        return <div>{error}</div>;
+        return <h2 className={styles.error}>{error}</h2>;
     }
+    const sortedCities = sortCitiesByName(cities);
+
     return (
       <div className={styles.mainView}>
-        {cities.map((city) => (
+
+        {sortedCities.map((city) => (
           <div key={city.name} className={styles.city}>
-          <h2>{city.name}</h2>
-          <img src ={weatherIcons[city.weather.conditions || notFound]} alt={city.weather.conditions} className={styles.weatherIcon}/>
+          <span className={styles.cityName}>{city.name}</span>
+          <img src ={weatherIcons[city.weather.conditions || notFound]} alt={city.weather.conditions} className={styles.icons}/>
           <button onClick={() => navigate(`/details/${city.name}`, { state: { city, icon: weatherIcons[city.weather.conditions || notFound] }})}>Details</button>
       </div>
         ))}
