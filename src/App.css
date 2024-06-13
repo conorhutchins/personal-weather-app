@@ -3,20 +3,22 @@ body {
     background-color: #323f58;
     margin: 10;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
+    height: 100vh;
   }
   
   /* Container for the white box */
   .container {
     background-color: #ffffff;
-    padding-top: 100px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 400px;
     max-width: 90%;
+
   }
   
   .weather {
@@ -40,5 +42,9 @@ body {
     color: #767171;
     text-align: right;
     margin-bottom: 20px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
   }
   
