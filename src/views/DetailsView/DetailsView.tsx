@@ -26,9 +26,10 @@ export const DetailsView: React.FC = () => {
             </div>
             </div>
           <div className={styles.details}>
-            <p><span>Temperature</span><span>{city.weather.temperature}</span></p>
+            <p className={styles.greyBackground}><span>Temperature</span>
+            <span>{city.weather.temperature}</span></p>
             <p><span>Conditions</span><span>{city.weather.conditions}</span></p>
-            <p><span>Wind Speed</span><span>{city.weather.windSpeed}</span></p>
+            <p className={styles.greyBackground}><span>Wind Speed</span><span>{city.weather.windSpeed}</span></p>
             <p><span>Humidity</span><span>{city.weather.humidity}</span></p>
           </div>
         </div>
