@@ -40,7 +40,9 @@ export const MainView: React.FC = () => {
         {sortedCities.map((city) => (
           <div key={city.name} className={styles.city}>
           <span className={styles.cityName}>{city.name}</span>
+          <div className={styles.iconContainer}>
           <img src ={weatherIcons[city.weather.conditions || notFound]} alt={city.weather.conditions} className={styles.icons}/>
+          </div>
           <button onClick={() => navigate(`/details/${city.name}`, { state: { city, icon: weatherIcons[city.weather.conditions || notFound] }})}>Details</button>
       </div>
         ))}

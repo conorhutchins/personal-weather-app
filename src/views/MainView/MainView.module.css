@@ -12,6 +12,7 @@
 .cityName {
   font-size: 12px;
   font-weight: 100;
+  width: 50px;
 }
 .icons {
   width: 24px;
@@ -25,4 +26,8 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-size: 10px;
+}
+.iconContainer {
+  display: flex;
+  justify-content: center;
 }
