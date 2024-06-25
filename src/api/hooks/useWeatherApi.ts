@@ -3,7 +3,7 @@ import { City, fetchWeatherData } from "../weather";
 
 export const useWeatherApi = () => {
   const [cities, setCities] = useState<City[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
