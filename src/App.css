@@ -1,0 +1,52 @@
+/* Set the body background color */
+body {
+    background-color: #323f58;
+    margin: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+  }
+  
+  /* Container for the white box */
+  .container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+    overflow: hidden;
+    position: relative;
+
+  }
+  
+  .weather {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0;
+    display: block;
+  }
+  
+  .UK {
+    margin-top: 0;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: auto;
+  }
+  
+  .time {
+    font-size: 14px;
+    font-weight: 500;
+    color: #767171;
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  

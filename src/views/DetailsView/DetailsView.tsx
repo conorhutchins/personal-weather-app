@@ -6,6 +6,7 @@ import cloudIcon from '../../assets/images/cloudy.png';
 import rainIcon from '../../assets/images/rain.png';
 import partialCloudIcon from '../../assets/images/partially-cloudy.png';
 import notFound from '../../assets/images/not-found.png';
+import styles from './DetailsView.module.css';
 
 export const DetailsView: React.FC = () => {
     const location = useLocation();
@@ -15,15 +16,22 @@ export const DetailsView: React.FC = () => {
     if (!city) {
         return <div>City not found</div>;
     }
-return (
-    <div>
-        <img src={backIcon} alt="back" onClick={() => navigate(-1)} />
-        <h1>{city.name}</h1>
-        <img src={icon || notFound} alt={city.weather.conditions} />
-        <p>Temperature {city.weather.temperature}</p>
-        <p>Conditions {city.weather.conditions}</p>
-        <p>Wind Speed {city.weather.windSpeed}</p>
-        <p>Humidity {city.weather.humidity}</p>
-    </div>
-);
-}
+    return (
+        <div className={styles.detailsView}>
+            <div className={styles.header}>
+            <img src={backIcon} alt="back" className={styles.backIcon} onClick={() => navigate(-1)} />
+            <div className={styles.cityName}>
+              <h1>{city.name}</h1>
+              <img src={icon || notFound} alt={city.weather.conditions} />
+            </div>
+            </div>
+          <div className={styles.details}>
+            <p className={styles.greyBackground}><span>Temperature</span>
+            <span>{city.weather.temperature}</span></p>
+            <p><span>Conditions</span><span>{city.weather.conditions}</span></p>
+            <p className={styles.greyBackground}><span>Wind Speed</span><span>{city.weather.windSpeed}</span></p>
+            <p><span>Humidity</span><span>{city.weather.humidity}</span></p>
+          </div>
+        </div>
+      );
+    };
